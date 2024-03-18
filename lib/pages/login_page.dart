@@ -1,5 +1,6 @@
 import 'package:delivery/components/button.dart';
 import 'package:delivery/components/textfield.dart';
+import 'package:delivery/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,8 +18,22 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   // Text editing controllers
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
+
+  // Login method
+  void login() {
+    /* 
+      Fill put authentication here
+    */
+
+    // navigate to home page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
             //Signin
             MyButton(
               text: "Sign In",
-              onTap: () {},
+              onTap: login,
             ),
 
             const SizedBox(
