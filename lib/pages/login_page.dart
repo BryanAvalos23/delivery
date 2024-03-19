@@ -117,8 +117,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Register now",
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        fontWeight: FontWeight.bold),
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
