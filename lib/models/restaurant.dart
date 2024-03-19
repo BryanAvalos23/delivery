@@ -32,7 +32,7 @@ class Restaurant extends ChangeNotifier {
       name: "Double cheese hamburguer",
       description:
           "A classic burger in the next level include double cheese and doble meet",
-      imagePath: "lib/images/hamburguers/doublecheese.png",
+      imagePath: "lib/images/hamburguers/doblecheese.png",
       price: 7.50,
       category: FoodCategory.burgers,
       availableAddon: [

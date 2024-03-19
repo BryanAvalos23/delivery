@@ -1,5 +1,6 @@
 import 'package:delivery/components/description_box.dart';
 import 'package:delivery/components/drawer.dart';
+import 'package:delivery/components/my_food_tile.dart';
 import 'package:delivery/components/my_tab_bar.dart';
 import 'package:delivery/components/sliver_app_bar.dart';
 import 'package:delivery/models/category.dart';
@@ -42,6 +43,7 @@ class _HomePageState extends State<HomePage>
   // return list of foods in give category
   List<Widget> getFoodInCategory(List<Food> fullMenu) {
     return FoodCategory.values.map((category) {
+      // get catogy menu
       List<Food> categoryMenu = _filterMenuByCategory(category, fullMenu);
 
       return ListView.builder(
@@ -49,9 +51,11 @@ class _HomePageState extends State<HomePage>
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(categoryMenu[index].name),
-          );
+          // get individual food
+          final food = categoryMenu[index];
+
+          //return food tile UI
+          return FoodTile(food: food, onTap: () {});
         },
       );
     }).toList();
