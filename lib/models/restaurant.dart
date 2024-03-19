@@ -1,8 +1,9 @@
 import 'package:delivery/models/addon.dart';
 import 'package:delivery/models/category.dart';
 import 'package:delivery/models/food.dart';
+import 'package:flutter/material.dart';
 
-class Restaurant {
+class Restaurant extends ChangeNotifier {
   // list menu
   final List<Food> _menu = [
     // burgers
@@ -78,7 +79,7 @@ class Restaurant {
       description: "One pizza with full flavor to the peperoni",
       imagePath: "lib/images/pizza/peperoni.png",
       price: 7.50,
-      category: FoodCategory.burgers,
+      category: FoodCategory.pizza,
       availableAddon: [
         Addon(
           name: "Extra cheese",
