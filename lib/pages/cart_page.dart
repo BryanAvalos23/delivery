@@ -1,3 +1,4 @@
+import 'package:delivery/components/button.dart';
 import 'package:delivery/components/my_cart_tile.dart';
 import 'package:delivery/models/restaurant.dart';
 import 'package:flutter/material.dart';
@@ -55,17 +56,45 @@ class CartPage extends StatelessWidget {
           ),
           body: Column(
             children: [
+              // List of cart
               Expanded(
-                child: ListView.builder(
-                    itemCount: userCart.length,
-                    itemBuilder: (context, index) {
-                      // get individual cart item
-                      final cartItem = userCart[index];
+                child: Column(
+                  children: [
+                    userCart.isEmpty
+                        ? Expanded(
+                            child: Center(
+                              child: Text(
+                                "Cart is empty...",
+                                style: TextStyle(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .inversePrimary,
+                                  fontSize: 24,
+                                ),
+                              ),
+                            ),
+                          )
+                        : Expanded(
+                            child: ListView.builder(
+                              itemCount: userCart.length,
+                              itemBuilder: (context, index) {
+                                // get individual cart item
+                                final cartItem = userCart[index];
 
-                      // return cart tile UI
-                      return MyCartTile(cartItem: cartItem);
-                    }),
-              )
+                                // return cart tile UI
+                                return MyCartTile(cartItem: cartItem);
+                              },
+                            ),
+                          ),
+                  ],
+                ),
+              ),
+
+              // button to play
+              MyButton(text: "Go to checkout", onTap: () {}),
+              const SizedBox(
+                height: 25,
+              ),
             ],
           ),
         );
