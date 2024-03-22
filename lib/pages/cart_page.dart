@@ -1,6 +1,7 @@
 import 'package:delivery/components/button.dart';
 import 'package:delivery/components/my_cart_tile.dart';
 import 'package:delivery/models/restaurant.dart';
+import 'package:delivery/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -91,7 +92,15 @@ class CartPage extends StatelessWidget {
               ),
 
               // button to play
-              MyButton(text: "Go to checkout", onTap: () {}),
+              MyButton(
+                text: "Go to checkout",
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PaymentPage(),
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 25,
               ),
