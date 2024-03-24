@@ -1,4 +1,5 @@
 import 'package:delivery/components/button.dart';
+import 'package:delivery/pages/delivery_progress_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
@@ -52,12 +53,15 @@ class _PaymentPageState extends State<PaymentPage> {
 
             // acepte button
             TextButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DeliveryProgressPage(),
-                ),
-              ),
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DeliveryProgressPage(),
+                  ),
+                );
+              },
               child: const Text("Acept"),
             ),
           ],
